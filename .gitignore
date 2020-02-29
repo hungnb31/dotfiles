@@ -1,0 +1,8 @@
+coc/
+configstore/
+deluge/
+devcert/
+gatsby/
+nvim/plugged/
+nvim/.netrwhist
+ranger/
