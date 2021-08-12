@@ -1,0 +1,218 @@
+{
+  // EDITOR CONFIGS
+  "editor.fontSize": 13,
+  "editor.fontFamily": "Source Code Pro",
+  "editor.fontWeight": "500",
+  "editor.fontLigatures": true,
+  "editor.tabSize": 2,
+  "editor.suggestSelection": "first",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.formatOnSave": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.linkedEditing": true,
+  // MINIMAL CONFIG
+  "window.menuBarVisibility": "toggle",
+  "window.title": "${folderName}",
+  "window.titleBarStyle": "custom",
+  "workbench.activityBar.visible": false,
+  "breadcrumbs.enable": false, // hide breadcumbs
+  "editor.minimap.enabled": false, // removes minimap
+  "editor.renderWhitespace": "none", // removes whitespace chars
+  "editor.renderIndentGuides": false, // removes indent guides
+  "editor.renderLineHighlight": "none", // removes line highlight
+  "editor.overviewRulerBorder": false, // removes border from overview ruler (located on the right, same position as the scrollbar)
+  "editor.hideCursorInOverviewRuler": true, // hides cursor mark in the overview ruler
+  "editor.folding": false, // removes the folding feature
+  "editor.occurrencesHighlight": false, // removes highlights occurrences (still works when you select a word)
+  "editor.glyphMargin": false, // removes the space used mainly for debugging indicators
+  "explorer.openEditors.visible": 0, // removes the open editors section at the top of the sidebar, you can see the opened files with ⌘ + ⌥ + Tab
+  "workbench.editor.tabCloseButton": "off", // removes cross icon from tabs
+  // VIM CONFIGS
+  "vim.useSystemClipboard": false,
+  "vim.smartRelativeLine": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "#dc7c42",
+  "vim.sneak": true,
+  "vim.leader": "<space>",
+  "vim.useCtrlKeys": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "w", "l"],
+      "commands": ["workbench.action.splitEditorRight"]
+    },
+    {
+      "before": ["<leader>", "w", "j"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "commands": ["workbench.action.splitEditorUp"]
+    },
+    {
+      "before": ["<leader>", "a"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["<leader>", "d"],
+      "commands": ["editor.action.copyLinesDownAction"]
+    },
+    {
+      "before": ["<leader>", "<leader>", "a"],
+      "commands": ["workbench.action.files.saveAll"]
+    },
+    {
+      "before": ["<leader>", "q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "commands": ["workbench.action.focusRightGroupWithoutWrap"]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "commands": ["workbench.action.focusLeftGroupWithoutWrap"]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "commands": ["workbench.action.focusBelowGroupWithoutWrap"]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "commands": ["workbench.action.focusAboveGroupWithoutWrap"]
+    },
+    {
+      "before": ["L"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["H"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    {
+      "before": ["B"],
+      "commands": ["workbench.action.navigateBack"]
+    },
+    {
+      "before": ["J"],
+      "after": ["j", "j", "j", "j", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["k", "k", "k", "k", "k"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["<leader>", "q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["J"],
+      "after": ["j", "j", "j", "j", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["k", "k", "k", "k", "k"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["actions.find"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "s", "t"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["revealInExplorer"]
+    },
+    {
+      "before": ["<leader>", "i"],
+      "commands": ["editor.action.marker.next"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["k", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-d>": false,
+    "<C-b>": false,
+    "<C-c>": false,
+    "<C-v>": false,
+    "<C-w>": false,
+    "<C-x>": false,
+    "<C-j>": false,
+    "<C-k>": false
+  },
+  // OTHER CONFIGS
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[python]": {
+    "editor.defaultFormatter": null
+  },
+  "python.formatting.provider": "yapf",
+  "python.formatting.yapfArgs": ["--style", "{indent_width: 2}"],
+  "python.showStartPage": false,
+  "files.associations": {
+    "*.plpgsql": "sql"
+  },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "GitHub Dark",
+  "editor.cursorStyle": "line",
+  "editor.lineNumbers": "on",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "breadcrumbs.enabled": false
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "key": "Ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    "key": "Ctrl+j",
+    "command": "editor.action.triggerSuggest",
+    "when": "!suggestWidgetVisible"
+  },
+  {
+    "key": "Ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetVisible"
+  }
+]
