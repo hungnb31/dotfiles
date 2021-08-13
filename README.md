@@ -1,2 +1,2 @@
 # dotfiles
-Configuration of my working environment 🔧
+Configs of my working environment 🔧
