@@ -1,21 +1,21 @@
 {
   // EDITOR CONFIGS
-  "editor.fontSize": 13,
-  "editor.fontFamily": "Source Code Pro",
+  "editor.fontSize": 12,
+  "editor.fontFamily": "Fira Code",
   "editor.fontWeight": "500",
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
+  "editor.lineHeight": 1.4,
   "editor.suggestSelection": "first",
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
   "editor.formatOnSave": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.linkedEditing": true,
   // MINIMAL CONFIG
+  "zenMode.hideLineNumbers": false,
   "window.menuBarVisibility": "toggle",
   "window.title": "${folderName}",
   "window.titleBarStyle": "custom",
-  "workbench.activityBar.visible": false,
   "breadcrumbs.enable": false, // hide breadcumbs
   "editor.minimap.enabled": false, // removes minimap
   "editor.renderWhitespace": "none", // removes whitespace chars
@@ -34,23 +34,51 @@
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "#dc7c42",
   "vim.sneak": true,
+  // "vim.hlsearch": true,
   "vim.leader": "<space>",
   "vim.useCtrlKeys": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "w", "l"],
+      "before": ["<leader>", "s", "l"],
       "commands": ["workbench.action.splitEditorRight"]
     },
     {
-      "before": ["<leader>", "w", "j"],
+      "before": ["<leader>", "s", "j"],
       "commands": ["workbench.action.splitEditorDown"]
     },
+
+    // find files
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    // find word globally
+    {
+      "before": ["<leader>", "f", "w"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    // find word locally
+    {
+      "before": ["<leader>", "f", "l"],
+      "commands": ["actions.find"]
+    },
+    // toggle sidebar visibility
+    {
+      "before": ["<leader>", ";"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    // comment line
+    {
+      "before": ["<leader>", "/"],
+      "commands": ["editor.action.commentLine"]
+    },
+
     {
       "before": ["<leader>", "k"],
       "commands": ["workbench.action.splitEditorUp"]
     },
     {
-      "before": ["<leader>", "a"],
+      "before": ["<leader>", "w"],
       "commands": ["workbench.action.files.save"]
     },
     {
@@ -118,21 +146,27 @@
     {
       "before": ["K"],
       "after": ["k", "k", "k", "k", "k"]
+    },
+
+    // comment lines
+    {
+      "before": ["<leader>", "/"],
+      "commands": ["editor.action.commentLine"]
     }
   ],
   "vim.normalModeKeyBindings": [
-    {
-      "before": ["<leader>", "t"],
-      "commands": ["actions.find"]
-    },
-    {
-      "before": ["<leader>", "f"],
-      "commands": ["workbench.action.quickOpen"]
-    },
-    {
-      "before": ["<leader>", "s", "t"],
-      "commands": ["workbench.action.findInFiles"]
-    },
+    // {
+    //   "before": ["<leader>", "t"],
+    //   "commands": ["actions.find"]
+    // },
+    // {
+    //   "before": ["<leader>", "f"],
+    //   "commands": ["workbench.action.quickOpen"]
+    // },
+    // {
+    //   "before": ["<leader>", "s", "t"],
+    //   "commands": ["workbench.action.findInFiles"]
+    // },
     {
       "before": ["<leader>", "e"],
       "commands": ["revealInExplorer"]
@@ -214,5 +248,7 @@
     "jupyter-notebook": "left"
   },
   "diffEditor.ignoreTrimWhitespace": false,
-  "breadcrumbs.enabled": false
+  "breadcrumbs.enabled": false,
+  "window.zoomLevel": -1,
+  "workbench.activityBar.visible": false
 }
