@@ -1,17 +1,17 @@
-vim.cmd[[
+vim.cmd [[
 set rnu
 set termguicolors
 set background=dark
 let g:gruvbox_material_background = 'hard'
-
 let g:sneak#label = 1
 ]]
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = true
 lvim.colorscheme = "gruvbox-material"
+lvim.format_on_save = false
 
+-- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
@@ -57,8 +57,8 @@ lvim.builtin.which_key.mappings["t"] = {
 
 lvim.builtin.which_key.mappings["e"] = {
   name = "Nvim Tree",
-  e = {":NvimTreeToggle<cr>", "Toggle"},
-  f = {":NvimTreeFindFile<cr>", "Find File"}
+  e = { ":NvimTreeToggle<cr>", "Toggle" },
+  f = { ":NvimTreeFindFile<cr>", "Find File" }
 }
 
 -- Additional Plugins
@@ -102,19 +102,19 @@ lvim.plugins = {
   },
   {
     "tpope/vim-surround",
-    keys = {"c", "d", "y"}
+    keys = { "c", "d", "y" }
   },
   {
     "ggandor/lightspeed.nvim",
     event = "BufRead",
   },
-  {"sainnhe/gruvbox-material"},
+  { "sainnhe/gruvbox-material" },
   {
     "ray-x/lsp_signature.nvim",
-    config = function() require"lsp_signature".on_attach() end,
+    config = function() require "lsp_signature".on_attach() end,
     event = "InsertEnter"
   },
-  {"justinmk/vim-sneak"},
+  { "justinmk/vim-sneak" },
 }
 
 lvim.keys.normal_mode = {
@@ -125,6 +125,14 @@ lvim.keys.normal_mode = {
   ["<Tab>"] = ":bnext<CR>",
   ["<S-Tab>"] = ":bprevious<CR>",
 }
+
+-- TODO: User Config for predefined plugins
+-- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
+lvim.builtin.dashboard.active = true
+lvim.builtin.notify.active = true
+lvim.builtin.terminal.active = true
+lvim.builtin.nvimtree.show_icons.git = 0
+lvim.builtin.nvimtree.setup.view.auto_resize = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -141,16 +149,20 @@ lvim.builtin.treesitter.ensure_installed = {
   "yaml",
 }
 
-lvim.builtin.alpha.active = true
-lvim.builtin.alpha.mode = "dashboard"
-
-lvim.builtin.terminal.active = true
-
-lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
-
-lvim.builtin.notify.active = true
-lvim.builtin.notify.opts = { stages = "fade" }
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  { command = "black" },
+  {
+    command = "prettier",
+    args = { "--print-width", "100" },
+    filetypes = { "typescript", "typescriptreact" },
+  },
+}
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
+
+-- lvim.autocommands.custom_groups = {
+--   -- On entering a lua file, set the tab spacing and shift width to 8
+--   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
+-- }
