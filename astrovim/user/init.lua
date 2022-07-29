@@ -263,6 +263,9 @@ local config = {
       ["<leader>sj"] = { "<cmd> :split <CR>", desc = "Horizontal Split" },
       -- Ranger
       ["<leader>r"] = { "<cmd> :RnvimrToggle <CR>", desc = "Ranger" },
+      -- NeoTree
+      ["<leader>ef"] = { "<cmd> :Neotree focus <CR>", desc = "Focus Explorer" },
+      ["<leader>ee"] = { "<cmd> :Neotree toggle <CR>", desc = "Toggle Explorer" },
     },
     t = {
       -- setting a mapping to false will disable it
