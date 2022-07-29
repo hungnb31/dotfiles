@@ -261,6 +261,8 @@ local config = {
       ["<leader>w"] = { "<cmd> :w <CR>", desc = "Save" },
       ["<leader>sl"] = { "<cmd> :vsplit <CR>", desc = "Vertical Split" },
       ["<leader>sj"] = { "<cmd> :split <CR>", desc = "Horizontal Split" },
+      -- Ranger
+      ["<leader>r"] = { "<cmd> :RnvimrToggle <CR>", desc = "Ranger" },
     },
     t = {
       -- setting a mapping to false will disable it
