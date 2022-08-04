@@ -6,3 +6,4 @@ gatsby/
 nvim/plugged/
 nvim/.netrwhist
 ranger/
+.DS_Store
