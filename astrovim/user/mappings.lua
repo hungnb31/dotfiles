@@ -64,4 +64,9 @@ return {
 		["jk"] = false,
 		["jj"] = false
 	},
+	i = {
+		["<Tab>"] = { 'copilot#Accept("<CR>")', silent = true, expr = true, noremap = true, replace_keycodes = false },
+		["<S-Tab>"] = { 'copilot#Next()', silent = true, expr = true },
+		["<C-Tab>"] = { 'copilot#Previous()', silent = true, expr = true },
+	},
 }

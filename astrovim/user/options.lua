@@ -1,14 +1,16 @@
 -- set vim options here (vim.<first_key>.<second_key> = value)
+require("user.autocmd")
 return {
   opt = {
-    -- set to true or false etc.
-    relativenumber = false, -- sets vim.opt.relativenumber
-    number = true,          -- sets vim.opt.number
-    spell = false,          -- sets vim.opt.spell
-    signcolumn = "auto",    -- sets vim.opt.signcolumn to auto
-    wrap = false,           -- sets vim.opt.wrap
+    relativenumber = true, -- sets vim.opt.relativenumber
+    number = true,         -- sets vim.opt.number
+    spell = false,         -- sets vim.opt.spell
+    signcolumn = "auto",   -- sets vim.opt.signcolumn to auto
+    wrap = false,          -- sets vim.opt.wrap
   },
   g = {
+    copilot_no_tab_map = true,
+    copilot_assume_mapped = true,
     mapleader = " ",                  -- sets vim.g.mapleader
     autoformat_enabled = true,        -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
     cmp_enabled = true,               -- enable completion at start

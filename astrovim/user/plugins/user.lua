@@ -7,6 +7,11 @@ return {
     end,
   },
   {
+    "jose-elias-alvarez/typescript.nvim",
+    after = "mason-lspconfig.nvim",
+    config = function() require("typescript").setup { server = astronvim.lsp.server_settings "tsserver" } end,
+  },
+  {
     "kevinhwang91/rnvimr",
     cmd = "RnvimrToggle",
     config = function()
